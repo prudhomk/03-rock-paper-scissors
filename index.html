@@ -13,30 +13,32 @@
 </head>
 
 <body>
-    <header>
-        <div class="gutter-right logo">
-            <img src="assets/big-logo.png"/>
-        </div>
-    </header>
+   
     <main>
+        <section>
         <label>
-            Rock
             <input type="radio" name="throw" value="Rock">
+            <img src='assets/Card-rock.jpg';>
         </label>
         <label>
-            Paper
             <input type="radio" name="throw" value="Paper">
+            <img src='assets/Card-paper.jpg';>
         </label>
         <label>
-            Scissors
             <input type="radio" name="throw" value="Scissors">
+            <img src='assets/Card-scissors.jpg';>
         </label>
+       </section>
         <button id="shoot">Shoot!</button>
+        <section>
+            <img id="compImage">
         <div>Total:<span id="total-games">0</span></div>
         <div>Wins:<span id="wins">0</span></div>
         <div>Losses:<span id="losses">0</span></div>
         <div>Draws:<span id="draws">0</span></div>
         <button id="reset">Start Anew</button>
+        </section>
+
     </main>
     
 
