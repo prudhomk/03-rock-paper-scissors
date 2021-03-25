@@ -6,6 +6,7 @@ const totalGames = document.getElementById('total-games');
 const wins = document.getElementById('wins');
 const losses = document.getElementById('losses');
 const draws = document.getElementById('draws');
+const resetDisplay = document.getElementById('resets');
 const compImage = document.getElementById('compImage');
 
 // initialize state
@@ -13,8 +14,8 @@ let total = 0;
 let win = 0;
 let loss = 0;
 let draw = 0;
-
-
+let resets = 0;
+console.log(resetDisplay, resets);
 button.addEventListener('click', () => {
     compImage.style.display = 'block';
     let compHand = Number(Math.ceil(Math.random() * 3));
@@ -55,6 +56,9 @@ button.addEventListener('click', () => {
 
 // set event listeners to update state and DOM
 resetButton.addEventListener('click', () => {
+    compImage.style.display = 'none';
+    resets++;
+    console.log(resetDisplay, resets);
     win = 0;
     total = 0;
     loss = 0;
@@ -63,4 +67,5 @@ resetButton.addEventListener('click', () => {
     draws.textContent = 0;
     losses.textContent = 0;
     totalGames.textContent = 0;
+    resetDisplay.textContent = resets;
 }); 
