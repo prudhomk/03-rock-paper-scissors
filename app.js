@@ -18,30 +18,32 @@ totalGames.textContent = total.value;
 button.addEventListener('click', () => {
     
     let compHand = Number(Math.ceil(Math.random() * 3));
-    console.log(compHand);
+    
     total++;
 
     const radioPick = document.querySelector('input:checked');
     const userHand = radioPick.value;
-
-    switch (checkHand(userHand, roshambo(compHand))) {
+    compHand = roshambo(compHand);
+    const winOrLose = checkHand(userHand, compHand);
+    
+    switch (winOrLose) {
         case 'Loss':
-            totalGames.textContent = total.value;
+            totalGames.textContent = total;
             loss++;
-            losses.textContent = loss.value;
+            losses.textContent = loss;
             break;
         case 'Win':
-            totalGames.textContent = total.value;
+            totalGames.textContent = total;
             win++;
-            wins.textContent = win.value;
+            wins.textContent = win;
             break;
         case 'Draw':
-            totalGames.textContent = total.value;
+            totalGames.textContent = total;
             draw++;
-            draws.textContent = draw.value;
+            draws.textContent = draw;
             break;
         default:
-            totalGames.textcontent = total.value;
+            totalGames.textcontent = total;
             break;
        
     }
