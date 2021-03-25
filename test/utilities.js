@@ -1,29 +1,28 @@
 export function checkHand(userHand, compHand) {
-    if (userHand === 1 && compHand === 2) return 1;
-    if (userHand === 2 && compHand === 3) return 2;
-    if (userHand === 3 && compHand === 1) return 3;
-    if (userHand === compHand) return 4;
-    if (userHand === 2 && compHand === 1) return 5;
-    if (userHand === 3 && compHand === 2) return 6;
-    if (userHand === 1 && compHand === 3) return 7;
+    if (userHand === 'Rock' && compHand === 'Paper') return 'Loss';
+    if (userHand === 'Paper' && compHand === 'Scissors') return 'Loss';
+    if (userHand === 'Scissors' && compHand === 'Rock') return 'Loss';
+    if (userHand === 'Rock' && compHand === 'Scissors') return 'Win';
+    if (userHand === 'Scissors' && compHand === 'Paper') return 'Win';
+    if (userHand === 'Paper' && compHand === 'Rock') return 'Win';
+    if (userHand === compHand) return 'Draw';
 }
 
 
 
 
-export function roshambo() {
-    const randomNum = Number(Math.ceil(Math.random) * 3);
+export function roshambo(x) {
     //Scissors
-    if (randomNum === 3) {
-        let compHand = 3;
+    if (x === 3) {
+        return 'Scissors';
     }
     //Paper
-    if (randomNum === 2) {
-        let compHand = 2;
+    if (x === 2) {
+        return 'Paper';
     }
     //Rock
-    if (randomNum === 1) {
-        let compHand = 1;
+    if (x === 1) {
+        return 'Rock';
     }
 
 }
