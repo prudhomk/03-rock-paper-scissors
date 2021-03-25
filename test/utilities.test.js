@@ -1,5 +1,5 @@
 // IMPORT MODULES under test here:
-import { checkHand } from './utilities.js';
+import { checkHand, roshambo } from './utilities.js';
 
 const test = QUnit.test;
 
@@ -26,11 +26,21 @@ test('if rock is compared to scissors', (expect) => {
 });
 
 
-
-
 test('if rock is compared to rock', (expect) => {
    
     const rock = 'Rock';
     
     expect.equal(checkHand(rock, rock), 'Draw', 'Rock ties rock');
+});
+
+test('if x is 2, return paper', (expect) => {
+   
+    const x = 2;
+    expect.equal(roshambo(x), 'Paper', 'Paper is returned');
+});
+
+test('if x is 3, return scissors', (expect) => {
+    
+    const x = 3;
+    expect.equal(roshambo(x), 'Scissors', 'Scissors is returned');
 });

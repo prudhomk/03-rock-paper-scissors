@@ -8,7 +8,11 @@ export function checkHand(userHand, compHand) {
     if (userHand === compHand) return 'Draw';
 }
 
-
+export function compVisual(compHand, compImage) {
+    if (compHand === 'Rock') compImage.src = './assets/Card-rock.jpg';
+    if (compHand === 'Paper') compImage.src = './assets/Card-paper.jpg';
+    if (compHand === 'Scissors') compImage.src = './assets/Card-scissors.jpg';
+}
 
 
 export function roshambo(x) {
