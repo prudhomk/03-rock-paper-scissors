@@ -6,19 +6,18 @@ const totalGames = document.getElementById('total-games');
 const wins = document.getElementById('wins');
 const losses = document.getElementById('losses');
 const draws = document.getElementById('draws');
-
+const compImage = document.getElementById('compImage');
 
 // initialize state
 let total = 0;
 let win = 0;
 let loss = 0;
 let draw = 0;
-totalGames.textContent = total.value;
+
 
 button.addEventListener('click', () => {
-    
+    compImage.style.display = 'block';
     let compHand = Number(Math.ceil(Math.random() * 3));
-    
     total++;
 
     const radioPick = document.querySelector('input:checked');
@@ -26,6 +25,11 @@ button.addEventListener('click', () => {
     compHand = roshambo(compHand);
     const winOrLose = checkHand(userHand, compHand);
     
+    if (compHand === 'Rock') compImage.src = './assets/Card-rock.jpg';
+    if (compHand === 'Paper') compImage.src = './assets/Card-paper.jpg';
+    if (compHand === 'Scissors') compImage.src = './assets/Card-scissors.jpg';
+    
+
     switch (winOrLose) {
         case 'Loss':
             totalGames.textContent = total;
@@ -47,11 +51,8 @@ button.addEventListener('click', () => {
             break;
        
     }
-
-
-
-
 });
+
 // set event listeners to update state and DOM
 resetButton.addEventListener('click', () => {
     win = 0;
@@ -60,6 +61,6 @@ resetButton.addEventListener('click', () => {
     draw = 0;
     wins.textContent = 0;
     draws.textContent = 0;
-    losses.textcontent = 0;
+    losses.textContent = 0;
     totalGames.textContent = 0;
 }); 
