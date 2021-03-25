@@ -1,5 +1,5 @@
 // import functions and grab DOM elements
-import { checkHand, roshambo } from './test/utilities.js';
+import { checkHand, compVisual, roshambo } from './test/utilities.js';
 const button = document.getElementById('shoot');
 const resetButton = document.getElementById('reset');
 const totalGames = document.getElementById('total-games');
@@ -26,9 +26,7 @@ button.addEventListener('click', () => {
     compHand = roshambo(compHand);
     const winOrLose = checkHand(userHand, compHand);
     
-    if (compHand === 'Rock') compImage.src = './assets/Card-rock.jpg';
-    if (compHand === 'Paper') compImage.src = './assets/Card-paper.jpg';
-    if (compHand === 'Scissors') compImage.src = './assets/Card-scissors.jpg';
+    compVisual(compHand, compImage);
     
 
     switch (winOrLose) {
