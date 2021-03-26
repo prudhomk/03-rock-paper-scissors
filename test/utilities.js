@@ -15,6 +15,8 @@ export function compVisual(compHand, compImage) {
 }
 
 
+
+
 export function roshambo(x) {
     //Scissors
     if (x === 3) {

@@ -8,6 +8,7 @@ const losses = document.getElementById('losses');
 const draws = document.getElementById('draws');
 const resetDisplay = document.getElementById('resets');
 const compImage = document.getElementById('compImage');
+const chat = document.getElementById('chat');
 
 // initialize state
 let total = 0;
@@ -28,22 +29,30 @@ button.addEventListener('click', () => {
     
     compVisual(compHand, compImage);
     
+    const quips = ['Come back in ten years, kid!', 'Try guessing correctly!', 'You can never defeat me!'];
+    const excuses = ['You got lucky, punk!', 'The sun was in my eyes!', 'You cheated!', 'Best two out of three!', 'This round never happened.']; 
+    const randomQuip = quips[Math.floor(Math.random() * quips.length)];
+    const randomExcuse = excuses[Math.floor(Math.random() * quips.length)];
+
 
     switch (winOrLose) {
         case 'Loss':
             totalGames.textContent = total;
             loss++;
-            losses.textContent = loss;
+            losses.textContent = loss;  
+            chat.textContent = randomQuip;
             break;
         case 'Win':
             totalGames.textContent = total;
             win++;
             wins.textContent = win;
+            chat.textContent = randomExcuse;
             break;
         case 'Draw':
             totalGames.textContent = total;
             draw++;
             draws.textContent = draw;
+            chat.textContent = 'There are no draws, only delayed defeats.';
             break;
         default:
             totalGames.textcontent = total;
@@ -66,4 +75,5 @@ resetButton.addEventListener('click', () => {
     losses.textContent = 0;
     totalGames.textContent = 0;
     resetDisplay.textContent = resets;
+    chat.textContent = 'I remember all our games, nice try though!';
 }); 
